@@ -1,0 +1,16 @@
+- hosts: 172.31.38.155
+  become: yes
+  tasks:
+    - name: intsall apache server
+      yum:
+        name: httpd
+        state: present
+    - name: deploy index.html on apache server
+      copy:
+        src: index.html
+        dest: /var/www/html
+    - name: start and enable
+      service:
+        name: httpd
+        state: started
+        enabled: yes
