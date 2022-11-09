@@ -1,4 +1,4 @@
-- hosts: 172.31.38.155
+- hosts: 
   become: yes
   tasks:
     - name: intsall apache server
